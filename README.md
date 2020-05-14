@@ -3,6 +3,7 @@
 ## Usage
 ### As a module
 Use create_language_model method in module ngramlanguagemodel to extract ngrams and their count to be filtered or manipulated further:
+
     import ngramlanguagemodel from ngramlanguagemodel
 
     sentences = ["sentence one", "sentence two"]
@@ -12,6 +13,7 @@ Use create_language_model method in module ngramlanguagemodel to extract ngrams 
 
 ### As an executable package
 Use the main module (or execute the package with the -m flag) to extract a language model from Wortschatz sentence corpora:
+
     python3 -m ngramlanguagemodel path/to/Wortschatz/sentence/file.txt <language> \[minimum frequency\]
 
 ## Specification
