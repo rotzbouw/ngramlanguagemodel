@@ -2,6 +2,25 @@
 Create models for language detection based on character n-grams.
 ================================================================
 
+Usage
+=====
+As a module
+===========
+Use create_language_model method in module ngramlanguagemodel to extract ngrams and their count to be filtered or manipulated further:
+::
+    import ngramlanguagemodel from ngramlanguagemodel
+
+    sentences = ["sentence one", "sentence two"]
+    ngrams_with_counts = ngramlanguagemodel.create_language_model(sentences)
+    for ngram_with_count in ngrams_with_counts.items():
+        print(ngram_with_count)
+
+As an executable package
+========================
+Use the main module (or execute the package with the -m flag) to extract a language model from Wortschatz sentence corpora:
+::
+    python3 -m ngramlanguagemodel path/to/Wortschatz/sentence/file.txt <language> \[minimum frequency\]
+
 Specifications
 ==============
 Currently, the size of the n-grams is not configurable and hard-coded to 5.
@@ -17,3 +36,8 @@ Related
 This module is inspired by and combines aspects of the following two approaches:
 http://practicalcryptography.com/miscellaneous/machine-learning/tutorial-automatic-language-identification-ngram-b/
 http://cloudmark.github.io/Language-Detection/
+
+ToDo
+====
+- use argparse instead of the default sys.argv
+- Make N configurable
